@@ -12,16 +12,30 @@ const compchoice = () =>{
     let random = Math.floor(Math.random() * 3)
     return choices[random]
 }
+
+const setcolor = (userscore, compscore) =>{
+    if(userscore < compscore){
+        userScore_span.style.color = 'white'
+        userScore_span.style.backgroundColor = 'red'
+    }
+    else{
+        userScore_span.style.color = 'black'
+        userScore_span.style.backgroundColor = 'white'
+    }
+}
+
 const showwin = (userwin, userchoice, computerchoice) =>{
     if(userwin){
         userscore++
         userScore_span.innerText = userscore
+        setcolor(userscore, compscore)
         message.innerHTML = `You win! ${userchoice} beats ${computerchoice}`
         message.style.backgroundColor = 'green'
     }
     else{
         compscore++
         computerScore_span.innerText = compscore
+        setcolor(userscore, compscore)
         message.innerHTML = `You lose! ${computerchoice} beats ${userchoice}`
         message.style.backgroundColor = 'red'
     }

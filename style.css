@@ -11,6 +11,7 @@ h1{
 .choices{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
     gap: 30px;
 }
@@ -54,7 +55,7 @@ h1{
 
 }
 .messg-p{
-    margin-top: 50px;
+    margin: 50px 0px;
     display: flex;
     justify-content: center;
 }
